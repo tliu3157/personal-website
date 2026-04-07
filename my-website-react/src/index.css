@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+/* === Fade-in animation === */
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* === Nav === */
 nav {
   position: sticky;
@@ -64,3 +76,18 @@ h2 {
 
 .project-card h3 { margin-bottom: 0.4rem; }
 .project-card a { color: #0070f3; text-decoration: none; font-size: 0.9rem; }
+
+/* === Mobile === */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+}

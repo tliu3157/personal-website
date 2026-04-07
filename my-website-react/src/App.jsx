@@ -1,3 +1,25 @@
+import { useEffect, useRef } from "react"
+
+function useFadeIn() {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible")
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
+  return ref
+}
+
 function Nav() {
   return (
     <nav>
@@ -28,28 +50,32 @@ function ProjectCard({ title, description, link }) {
 }
 
 function App() {
+  const aboutRef = useFadeIn()
+  const projectsRef = useFadeIn()
+  const contactRef = useFadeIn()
+
   return (
     <main>
-      <nav/>
+      <Nav />
       <Header />
 
-      <section>
+      <section id="about" ref={aboutRef} className="fade-section">
         <h2>About Me</h2>
-        <p>Write your bio here.</p>
+        <p>Your bio here.</p>
       </section>
 
-      <section>
+      <section id="projects" ref={projectsRef} className="fade-section">
         <h2>Projects</h2>
         <ProjectCard
-          title="Fitbit Project"
-          description="Non-invasive glucose monitoring using a fitbit"
-          link="https://github.com/tliu3157/NoninvasiveGlucosePrediction"
+          title="Project One"
+          description="A short description."
+          link="https://github.com"
         />
-        <ProjectCard
-          title="AP Research Project"
-          description="NHANES Diabetes ML and DL prediction study"
-          link="https://github.com/tliu3157/LifestyleDiabetesDetection"
-        />
+      </section>
+
+      <section id="contact" ref={contactRef} className="fade-section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:you@email.com">you@email.com</a></p>
       </section>
     </main>
   )
