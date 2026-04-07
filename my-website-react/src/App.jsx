@@ -71,6 +71,11 @@ function App() {
           description="A short description."
           link="https://github.com"
         />
+        <ProjectCard
+          title="Project Two"
+          description="Another short description."
+          link="https://github.com"
+        />
       </section>
 
       <section id="contact" ref={contactRef} className="fade-section">
