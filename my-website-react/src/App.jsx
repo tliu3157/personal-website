@@ -1,3 +1,13 @@
+function Nav() {
+  return (
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  )
+}
+
 function Header() {
   return (
     <header>
@@ -20,6 +30,7 @@ function ProjectCard({ title, description, link }) {
 function App() {
   return (
     <main>
+      <nav/>
       <Header />
 
       <section>
