@@ -44,16 +44,7 @@ function App() {
 
       <section id="projects" ref={projectsRef} className="fade-section">
         <h2>Projects</h2>
-        <ProjectCard
-          title="Project One"
-          description="A short description."
-          link="https://github.com"
-        />
-        <ProjectCard
-          title="Project Two"
-          description="Another project."
-          link="https://github.com"
-        />
+        <Projects />
       </section>
 
       <section id="contact" ref={contactRef} className="fade-section">
