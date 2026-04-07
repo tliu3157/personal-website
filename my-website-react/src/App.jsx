@@ -1,4 +1,7 @@
 import { useEffect, useRef } from "react"
+import Nav from "src/components/Nav"
+import Header from "src/components/Header"
+import ProjectCard from "src/components/ProjectCard"
 
 function useFadeIn() {
   const ref = useRef(null)
@@ -18,35 +21,6 @@ function useFadeIn() {
   }, [])
 
   return ref
-}
-
-function Nav() {
-  return (
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  )
-}
-
-function Header() {
-  return (
-    <header>
-      <h1>Thomas Liu</h1>
-      <p>Software Developer · Based in San Ramon, CA</p>
-    </header>
-  )
-}
-
-function ProjectCard({ title, description, link }) {
-  return (
-    <div className="project-card">
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <a href={link}>View on GitHub</a>
-    </div>
-  )
 }
 
 function App() {
