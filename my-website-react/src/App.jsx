@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <h1>Your Name</h1>
+      <h1>Thomas Liu</h1>
       <p>Software Developer · Based in San Ramon, CA</p>
     </header>
   )
@@ -30,14 +30,14 @@ function App() {
       <section>
         <h2>Projects</h2>
         <ProjectCard
-          title="Project One"
-          description="A short description of what this does."
-          link="https://github.com"
+          title="Fitbit Project"
+          description="Non-invasive glucose monitoring using a fitbit"
+          link="https://github.com/tliu3157/NoninvasiveGlucosePrediction"
         />
         <ProjectCard
-          title="Project Two"
-          description="Another project you've worked on."
-          link="https://github.com"
+          title="AP Research Project"
+          description="NHANES Diabetes ML and DL prediction study"
+          link="https://github.com/tliu3157/LifestyleDiabetesDetection"
         />
       </section>
     </main>
