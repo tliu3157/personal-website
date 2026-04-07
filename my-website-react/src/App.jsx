@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
-import Nav from "src/components/Nav"
-import Header from "src/components/Header"
-import ProjectCard from "src/components/ProjectCard"
+import Nav from "src/components/Nav.jsx"
+import Header from "src/components/Header.jsx"
+import ProjectCard from "src/components/ProjectCard.jsx"
 
 function useFadeIn() {
   const ref = useRef(null)
