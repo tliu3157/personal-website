@@ -1,11 +1,10 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Nav from "src/components/Nav"
 import Header from "src/components/Header"
 import ProjectCard from "src/components/ProjectCard"
 
 function useFadeIn() {
   const ref = useRef(null)
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -15,22 +14,26 @@ function useFadeIn() {
       },
       { threshold: 0.1 }
     )
-
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
   }, [])
-
   return ref
 }
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode)
+  }, [darkMode])
+
   const aboutRef = useFadeIn()
   const projectsRef = useFadeIn()
   const contactRef = useFadeIn()
 
   return (
     <main>
-      <Nav />
+      <Nav darkMode={darkMode} onToggle={() => setDarkMode(!darkMode)} />
       <Header />
 
       <section id="about" ref={aboutRef} className="fade-section">
@@ -47,7 +50,7 @@ function App() {
         />
         <ProjectCard
           title="Project Two"
-          description="Another short description."
+          description="Another project."
           link="https://github.com"
         />
       </section>

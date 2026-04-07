@@ -91,3 +91,42 @@ h2 {
     gap: 1rem;
   }
 }
+/* === Dark mode === */
+body.dark {
+  background: #111;
+  color: #eee;
+}
+
+body.dark nav {
+  background: #111;
+  border-bottom-color: #333;
+}
+
+body.dark nav a {
+  color: #aaa;
+}
+
+body.dark nav a:hover {
+  color: #fff;
+}
+
+body.dark .project-card {
+  border-color: #333;
+}
+
+/* === Nav button === */
+nav button {
+  margin-left: auto;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+nav button:hover {
+  border-color: #999;
+  color: #000;
+}
