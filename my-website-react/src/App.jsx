@@ -25,7 +25,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
-    document.body.classList.toggle("dark", darkMode)
+    document.documentElement.classList.toggle("dark", darkMode)
   }, [darkMode])
 
   const aboutRef = useFadeIn()
