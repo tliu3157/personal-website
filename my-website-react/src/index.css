@@ -1,10 +1,42 @@
 @import "tailwindcss";
-@variant dark (&:where(.dark, .dark *));
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* === Dark mode === */
+html.dark {
+  background: #111;
+  color: #eee;
+}
+
+html.dark body {
+  background: #111;
+  color: #eee;
+}
+
+html.dark nav {
+  background: #111;
+  border-bottom-color: #333;
+}
+
+html.dark nav a {
+  color: #aaa;
+}
+
+html.dark nav a:hover {
+  color: #fff;
+}
+
+html.dark .project-card {
+  border-color: #333;
+}
+
+html.dark nav button {
+  color: #aaa;
+  border-color: #444;
 }
 
 body {
